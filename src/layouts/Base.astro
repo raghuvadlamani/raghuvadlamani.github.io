@@ -1,0 +1,33 @@
+---
+const { title, description = 'Robot-learning infrastructure, designed and measured.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <header><a href="/">Raghu Vadlamani</a></header>
+    <main><slot /></main>
+    <footer>Personal work. Views are my own.</footer>
+  </body>
+</html>
+<style is:global>
+  :root { --bg: #fdfdfc; --fg: #1d1f21; --muted: #62666b; --line: #dfe1e3; --accent: #1f5fa8; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #15171a; --fg: #e5e6e8; --muted: #9a9ea3; --line: #33373c; --accent: #79aee6; } }
+  body { margin: 0 auto; max-width: 42rem; padding: 2rem 1rem; background: var(--bg); color: var(--fg); font: 1.0625rem/1.65 system-ui, sans-serif; }
+  a { color: var(--accent); }
+  header { margin-bottom: 2.5rem; font-weight: 600; }
+  header a { color: var(--fg); text-decoration: none; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
+  h1, h2, h3 { line-height: 1.25; }
+  img { max-width: 100%; height: auto; }
+  table { display: block; overflow-x: auto; border-collapse: collapse; font-size: .9375rem; font-variant-numeric: tabular-nums; }
+  th, td { padding: .35rem .75rem; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+  time { color: var(--muted); font-size: .9375rem; }
+  ul.posts { padding: 0; list-style: none; }
+  ul.posts li { margin-bottom: 1.5rem; }
+</style>
