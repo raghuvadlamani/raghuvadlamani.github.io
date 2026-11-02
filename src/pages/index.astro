@@ -5,8 +5,9 @@ import Base from '../layouts/Base.astro';
 const posts = (await getCollection('posts', ({ data }) => import.meta.env.DEV || !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
-<Base title="Raghu Vadlamani">
-  <h1>Robot-learning infrastructure, designed and measured</h1>
+<Base title="Raghu Vadlamani" home>
+  <h1>Raghu Vadlamani</h1>
+  <p class="tagline">Robot learning, built and measured.</p>
   <ul class="posts">
     {posts.map((p) => (
       <li>
