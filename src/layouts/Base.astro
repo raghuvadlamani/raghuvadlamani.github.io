@@ -16,18 +16,45 @@ const { title, description = 'Robot-learning infrastructure, designed and measur
   </body>
 </html>
 <style is:global>
-  :root { --bg: #fdfdfc; --fg: #1d1f21; --muted: #62666b; --line: #dfe1e3; --accent: #1f5fa8; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #15171a; --fg: #e5e6e8; --muted: #9a9ea3; --line: #33373c; --accent: #79aee6; } }
-  body { margin: 0 auto; max-width: 42rem; padding: 2rem 1rem; background: var(--bg); color: var(--fg); font: 1.0625rem/1.65 system-ui, sans-serif; }
+  :root { --bg: #fdfdfc; --fg: #1d1f21; --muted: #62666b; --line: #dfe1e3; --accent: #1f5fa8; --th: #e9eef4; --zebra: #f6f7f8; --hover: #eef3f9; --c1: #2a78d6; --c2: #eb6834; --c3: #1baf7a; --c4: #eda100; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #15171a; --fg: #e5e6e8; --muted: #9a9ea3; --line: #33373c; --accent: #79aee6; --th: #262c34; --zebra: #1b1e22; --hover: #222a33; --c1: #3987e5; --c2: #d95926; --c3: #199e70; --c4: #c98500; } }
+  body { margin: 0 auto; max-width: 58rem; padding: 2.5rem 1rem; background: var(--bg); color: var(--fg); font: 1.1875rem/1.7 system-ui, sans-serif; }
   a { color: var(--accent); }
   header { margin-bottom: 2.5rem; font-weight: 600; }
   header a { color: var(--fg); text-decoration: none; }
   footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
   h1, h2, h3 { line-height: 1.25; }
+  h1 { font-size: 2.5rem; margin-bottom: .5rem; }
+  h2 { font-size: 1.6rem; margin: 2.75rem 0 .75rem; }
+  p { margin: 0 0 1.15rem; }
   img { max-width: 100%; height: auto; }
-  table { display: block; overflow-x: auto; border-collapse: collapse; font-size: .9375rem; font-variant-numeric: tabular-nums; }
-  th, td { padding: .35rem .75rem; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+  table { display: block; width: fit-content; max-width: 100%; overflow-x: auto; margin: 1.5rem 0 1.75rem; border: 1px solid var(--line); border-radius: 10px; border-collapse: separate; border-spacing: 0; font-size: 1rem; line-height: 1.45; font-variant-numeric: tabular-nums; }
+  th, td { padding: .6rem 1.1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { text-align: left; background: var(--th); font-size: .875rem; font-weight: 650; letter-spacing: .01em; white-space: nowrap; }
+  tbody tr:nth-child(even) td { background: var(--zebra); }
+  tbody tr:hover td { background: var(--hover); }
+  tbody tr:last-child td { border-bottom: 0; }
+  td:first-child { font-weight: 550; }
+  figure.diagram { margin: 1.75rem 0; overflow-x: auto; }
+  figure.diagram svg { display: block; width: 100%; min-width: 720px; height: auto; }
+  figure.diagram text { fill: var(--fg); font-family: inherit; }
+  figure.diagram text.m { fill: var(--muted); }
+  figure.diagram figcaption { margin-top: .5rem; color: var(--muted); font-size: .9375rem; }
+  figure.diagram .b, figure.diagram .a { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+  figure.diagram .r { stroke: #2f7ed8; }
+  figure.diagram .g { stroke: #16936a; }
+  figure.diagram .o { stroke: #d9582b; }
+  figure.diagram .y { stroke: #c18a0e; }
+  figure.chart { margin: 1.75rem 0; overflow-x: auto; }
+  figure.chart svg { display: block; width: 100%; min-width: 720px; height: auto; }
+  figure.chart text { fill: var(--fg); font-family: inherit; }
+  figure.chart text.m { fill: var(--muted); }
+  figure.chart figcaption { margin-top: .5rem; color: var(--muted); font-size: .9375rem; }
+  blockquote { margin: 0 0 1.75rem; padding: .9rem 1.1rem; background: var(--th); border-left: 4px solid var(--accent); border-radius: 6px; font-size: 1.0625rem; line-height: 1.6; }
+  blockquote p { margin: 0; }
   time { color: var(--muted); font-size: .9375rem; }
+  article > time { display: block; margin-bottom: 1.75rem; }
+  @media (max-width: 600px) { body { font-size: 1.0625rem; padding-top: 1.5rem; } h1 { font-size: 1.9rem; } h2 { font-size: 1.35rem; } table { font-size: .9rem; } th, td { padding: .5rem .75rem; } }
   ul.posts { padding: 0; list-style: none; }
   ul.posts li { margin-bottom: 1.5rem; }
 </style>
